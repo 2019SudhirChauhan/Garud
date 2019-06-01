@@ -1,0 +1,12 @@
+{% extends "Layout.html" %}
+{% block content %}
+<div class="blockC">
+	{% for post in posts %}
+	<div>Lane1 = {{ post.Lane1 }}</div>
+	<div>Lane2 = {{ post.Lane2 }}</div>
+	<div>Lane3 = {{ post.Lane3 }}</div>
+	<div>Lane4 = {{ post.Lane4 }}</div>
+	{% endfor %}
+	<a href="/Traffic_Prediction">Refresh</a>
+</div>
+{% endblock %}

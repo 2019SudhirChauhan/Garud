@@ -1,0 +1,65 @@
+            .blockA{
+                height:20%;
+                width:100%;
+                background-color:#333;
+            }
+            .blockB{
+                background-color:#4CAF50;
+                height: 78%;
+                width: 16%;
+                position: absolute;    
+            }
+            .blockC{
+                background-color:yellow;
+                position: absolute;
+                height: 78%;
+                width: 82.8%;
+                margin-left: 16%;
+            }
+            .logo{
+                padding-left: 25px;
+                margin-top: 21px;
+            }
+            .logo_sub_ttl{
+                font-family: celtichand, sans-serif;
+                src: url(celtichand.ttf);
+                font-size: xx-small;
+                margin-left: 100px;
+                margin-top: -20px;
+            }
+            .sub_text{
+                color: white;
+            }
+            .lr{
+                float: right;
+                margin: 52px 33px 0 0;
+            }
+            .lr a{
+                color: #f2f2f2;
+                text-align: center;
+                text-decoration: none;
+                font-size: 23px;
+                padding-right: 14px;
+            }
+            .lr a a{
+                padding-left: 10px;
+            }
+            .vertical-menu{
+                width:100%
+            }
+            .vertical-menu a{
+                color: white;
+                display: block;
+                padding: 20px;
+                text-decoration: none;
+                font-size: 21.6px;
+            }
+            .vertical-menu a:hover {
+                background-color: black;
+            }
+            .vertical-menu a.active {
+                background-color: #4CAF50; 
+                color: white;
+            hr{
+                color:#333;
+            }

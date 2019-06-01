@@ -1,0 +1,52 @@
+.BlockC{
+	background-color: yellow;
+	height: 78%;
+    width: 82.8%;
+	float: left;
+}
+.tt1{
+	position: absolute;
+	float: right;
+	width: 80px;
+	height: 20px;
+	background-color: white;
+	margin-top: 220px;
+	margin-left: 285px;
+}
+.tt2{
+	position: absolute;
+	float: right;
+	width: 80px;
+	height: 20px;
+	background-color: green;
+	margin-top: 320px;
+	margin-left: 285px;
+}
+.tt3{
+	position: absolute;
+	float: right;
+	width: 80px;
+	height: 20px;
+	background-color: red;
+	margin-top: 250px;
+	margin-left: 370px;
+}
+.tt4{
+	position: absolute;
+	float: right;
+	width: 80px;
+	height: 20px;
+	background-color: yellow;
+	margin-top: 273px;
+	margin-left: 250px;
+}
+.signal_sys{
+	float: right;
+	height: 18px; 
+	width: 18px;
+	border-radius: 100%;
+	background-color: red;
+}
+#show_timer1{
+	margin-right: 10px; 
+}

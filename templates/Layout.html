@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Garud</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='BlockC.css')}}">
+    </head>
+    <body>
+        <div class="blockA">
+            <a href="/"><img class="logo" src="{{url_for('static', filename='img/title_logo.png')}}"></a>
+            <div class="lr">
+                <a href="/Login">Login</a>
+                <a href="/Login">Register</a>
+            </div>
+            <div class="logo_sub_ttl"><p class="sub_text">Autonomous Traffic management system</p></div>
+        </div>
+        <div class="blockB">
+            <div class="vertical-menu">
+                <a href="/">Live Traffic</a><hr>
+                <a href="/Traffic_Prediction">Traffic Prediction</a><hr>
+                <a href="/Futher_Updates">Futher Updates</a><hr>
+                <a href="/About">About Us</a><hr>
+            </div>
+        </div>
+        {% block content %}{% endblock %}
+    </body>
+</html>

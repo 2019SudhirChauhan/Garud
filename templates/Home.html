@@ -1,0 +1,51 @@
+{% extends "Layout.html" %}
+{% block content %}
+<div class="blockC" style="background-image: url({{ url_for('static',filename='img/back_map.png') }});">
+	<div class="tt1" id="timer1">
+		<div id="show_timer1">
+		</div>
+		<div class="signal_sys"></div>
+	</div>
+	<div class="tt2" id="timer2">
+		<div id="show_timer2"></div>
+		<div class="signal_sys"></div>
+	</div>
+	<div class="tt3" id="timer3">
+		<div id="show_timer3"></div>
+		<div class="signal_sys"></div>
+	</div>
+	<div class="tt4" id="timer4">
+		<div id="show_timer4"></div>
+		<div class="signal_sys"></div>
+	</div>
+</div>
+{% for post in posts %}
+<input type="hidden" id="t1" name="custId" value="{{ post.Time_Lane1}}">
+<input type="hidden" id="t1" name="custId" value="{{ post.Time_Lane2}}">
+<input type="hidden" id="t1" name="custId" value="{{ post.Time_Lane3}}">
+<input type="hidden" id="t1" name="custId" value="{{ post.Time_Lane4}}">
+{% endfor %}
+<script type="text/javascript">
+	var distance = document.getElementById("t1").value;
+	var i = 1000;
+	var x = setInterval(function() {
+  	distance = distance - i;
+    
+  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  	document.getElementById("show_timer1").innerHTML = minutes + "m " + seconds + "s ";
+  	document.getElementById("show_timer2").innerHTML = minutes + "m " + seconds + "s ";
+  	document.getElementById("show_timer3").innerHTML = minutes + "m " + seconds + "s ";
+  	document.getElementById("show_timer4").innerHTML = minutes + "m " + seconds + "s ";
+  	if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("show_timer1").innerHTML = "EXP";
+    	document.getElementById("show_timer2").innerHTML = "EXP";
+    	document.getElementById("show_timer3").innerHTML = "EXP";
+    	document.getElementById("show_timer4").innerHTML = "EXP";
+  	}
+}, 1000);
+
+</script>
+{% endblock %}
