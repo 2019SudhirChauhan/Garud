@@ -2,10 +2,14 @@
 {% block content %}
 <div class="blockC">
 	<form method="POST", action="">
-		<legend>Future Traffic</legend>
-		Enter the Date : <input type="Date" name="Date"> <br>
-		Entert Time : <input type="text" name="Time"> <br>
-		<button type="submit">Get Count</button>
+		<legend id="legend">Future Traffic</legend>
+		<div class="block">
+			<label class="text">Enter the Date : </label><input class="input_box" type="Date" name="Date"> <br>
+		</div>
+		<div class="block">
+			<label class="text">Entert Time : </label><input type="text" class="input_box" name="Time"><p class="hint">Format :- HH:MM:SS</p><br>
+		</div>
+		<button type="submit" id="btn_submit">Get Count</button>
 	</form>
 </div>
 {% endblock %}

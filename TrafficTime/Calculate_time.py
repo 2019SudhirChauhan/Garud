@@ -1,7 +1,7 @@
 def calculateTime(count):
     timeInSec = 30000
     try:
-        timeInSec = int((3/2)*count)*10000
+        timeInSec = int((3/2)*count)*1000
         return timeInSec
     except :
         print("Error:201(Time Not Calculated)")

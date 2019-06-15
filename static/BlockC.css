@@ -1,5 +1,5 @@
 .BlockC{
-	background-color: yellow;
+	background-color: white;
 	height: 78%;
     width: 82.8%;
 	float: left;
@@ -7,38 +7,46 @@
 .tt1{
 	position: absolute;
 	float: right;
-	width: 80px;
+	width: 60px;
 	height: 20px;
 	background-color: white;
 	margin-top: 220px;
 	margin-left: 285px;
+	text-align: center;
+	border-radius: 20%;
 }
 .tt2{
 	position: absolute;
 	float: right;
-	width: 80px;
+	width: 60px;
 	height: 20px;
 	background-color: green;
-	margin-top: 320px;
-	margin-left: 285px;
+	margin-top: 300px;
+	margin-left: 340px;
+	text-align: center;
+	border-radius: 20%;
 }
 .tt3{
 	position: absolute;
 	float: right;
-	width: 80px;
+	width: 60px;
 	height: 20px;
 	background-color: red;
-	margin-top: 250px;
+	margin-top: 234px;
 	margin-left: 370px;
+	text-align: center;
+	border-radius: 20%;
 }
 .tt4{
 	position: absolute;
 	float: right;
-	width: 80px;
+	width: 60px;
 	height: 20px;
 	background-color: yellow;
 	margin-top: 273px;
 	margin-left: 250px;
+	text-align: center;
+	border-radius: 20%;
 }
 .signal_sys{
 	float: right;
@@ -47,6 +55,94 @@
 	border-radius: 100%;
 	background-color: red;
 }
+
 #show_timer1{
+	border-radius: 4px;
 	margin-right: 10px; 
+	border: 1.2px solid #008CBA;
+}
+
+#show_timer2{
+	border-radius: 4px;
+	border: 1.2px solid #008CBA;
+}
+
+#show_timer3{ 
+	border-radius: 4px;
+	border: 1.2px solid #008CBA;
+}
+
+#show_timer4{ 
+	border-radius: 4px;
+	border: 1.2px solid #008CBA;
+}
+
+.lane{
+	font-size: 24px;
+	margin: 25px 125px;
+}
+
+.head{
+	font-size: 32px;
+	align-items: center;
+	margin-left: 100px;
+	margin-top: 25px;
+}
+
+#Refresh{
+	text-decoration: none;
+	position: absolute;
+	font-size: 20px;
+	margin-top: 20px;
+	margin-left: 105px;
+}
+
+#legend{
+	font-size: 32px;
+	margin-top: 25px;
+	margin-left: 100px;
+}
+
+.text{
+	font-size: 24px;
+	margin-left: 125px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#btn_submit{
+	background-color: #008CBA;
+	border: none;
+  	color: white;
+  	padding: 15px 32px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+  	margin-left: 110px;
+  	margin-top: 20px;
+}
+
+.input_box{
+	border: 3px solid #555;
+}
+
+.hint{
+	font-size: 17px;
+	color: red;
+	margin-left : 142px;
+	margin-top: 2px;
+}
+
+.block{
+
+}
+
+.head1{
+	margin-left: 30px;
+}
+
+.about{
+	font-size: 20px;
+	padding: 20px;
 }

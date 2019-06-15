@@ -2,50 +2,142 @@
 {% block content %}
 <div class="blockC" style="background-image: url({{ url_for('static',filename='img/back_map.png') }});">
 	<div class="tt1" id="timer1">
-		<div id="show_timer1">
-		</div>
-		<div class="signal_sys"></div>
+		<div id="show_timer1"></div>
+		<!-- <div class="signal_sys"></div> -->
 	</div>
 	<div class="tt2" id="timer2">
 		<div id="show_timer2"></div>
-		<div class="signal_sys"></div>
+		<!-- <div class="signal_sys"></div> -->
 	</div>
 	<div class="tt3" id="timer3">
 		<div id="show_timer3"></div>
-		<div class="signal_sys"></div>
+		<!-- <div class="signal_sys"></div> -->
 	</div>
 	<div class="tt4" id="timer4">
 		<div id="show_timer4"></div>
-		<div class="signal_sys"></div>
+		<!-- <div class="signal_sys"></div> -->
 	</div>
 </div>
 {% for post in posts %}
 <input type="hidden" id="t1" name="custId" value="{{ post.Time_Lane1}}">
-<input type="hidden" id="t1" name="custId" value="{{ post.Time_Lane2}}">
-<input type="hidden" id="t1" name="custId" value="{{ post.Time_Lane3}}">
-<input type="hidden" id="t1" name="custId" value="{{ post.Time_Lane4}}">
+<input type="hidden" id="t2" name="custId" value="{{ post.Time_Lane2}}">
+<input type="hidden" id="t3" name="custId" value="{{ post.Time_Lane3}}">
+<input type="hidden" id="t4" name="custId" value="{{ post.Time_Lane4}}">
 {% endfor %}
 <script type="text/javascript">
-	var distance = document.getElementById("t1").value;
+	var LTime1 = document.getElementById("t1").value;
+	var LTime2 = document.getElementById("t2").value;
+	var LTime3 = document.getElementById("t3").value;
+	var LTime4 = document.getElementById("t4").value;
+
+	document.getElementById("show_timer1").innerHTML = "Stop";
+  document.getElementById("show_timer1").style.backgroundColor = "red";
+	document.getElementById("show_timer2").innerHTML = "Stop";
+  document.getElementById("show_timer2").style.backgroundColor = "red";
+	document.getElementById("show_timer3").innerHTML = "Stop";
+  document.getElementById("show_timer3").style.backgroundColor = "red";
+	document.getElementById("show_timer4").innerHTML = "Stop";
+  document.getElementById("show_timer4").style.backgroundColor = "red";
+
 	var i = 1000;
+  var check=0;
+
 	var x = setInterval(function() {
-  	distance = distance - i;
-    
-  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  	document.getElementById("show_timer1").innerHTML = minutes + "m " + seconds + "s ";
-  	document.getElementById("show_timer2").innerHTML = minutes + "m " + seconds + "s ";
-  	document.getElementById("show_timer3").innerHTML = minutes + "m " + seconds + "s ";
-  	document.getElementById("show_timer4").innerHTML = minutes + "m " + seconds + "s ";
-  	if (distance < 0) {
+  	LTime1 = LTime1 - i;
+    document.getElementById("show_timer1").style.backgroundColor = "green";
+    console.log(LTime1)
+  	var minutes = Math.floor((LTime1 % (1000 * 60 * 60)) / (1000 * 60));
+  	var seconds = Math.floor((LTime1 % (1000 * 60)) / 1000);
+    console.log(minutes)
+    console.log(seconds)
+  	document.getElementById("show_timer1").innerHTML = minutes + "m " + seconds + "s";
+    if(LTime1 < 6000){
+      document.getElementById("show_timer1").style.backgroundColor = "yellow";
+    }
+  	if (LTime1 < 0) {
     	clearInterval(x);
-    	document.getElementById("show_timer1").innerHTML = "EXP";
-    	document.getElementById("show_timer2").innerHTML = "EXP";
-    	document.getElementById("show_timer3").innerHTML = "EXP";
-    	document.getElementById("show_timer4").innerHTML = "EXP";
+    	document.getElementById("show_timer1").innerHTML = "Stop";
+      document.getElementById("show_timer1").style.backgroundColor = "red";
   	}
+    if (LTime1<0)
+      {check=1;}
+
 }, 1000);
+
+	//setTimeout(function(){ console.log("Wait"+LTime1); }, LTime1);
+	var m = setInterval(function() {
+    if(check == 1){
+  	LTime2 = LTime2 - i;
+    document.getElementById("show_timer2").style.backgroundColor = "green";
+    console.log(LTime2)
+  	var minutes = Math.floor((LTime2 % (1000 * 60 * 60)) / (1000 * 60));
+  	var seconds = Math.floor((LTime2 % (1000 * 60)) / 1000);
+    
+  	document.getElementById("show_timer2").innerHTML = minutes + "m " + seconds + "s ";
+  	if(LTime2 < 6000){
+      document.getElementById("show_timer2").style.backgroundColor = "yellow";
+    }
+    if (LTime2 < 0) {
+    	clearInterval(m);
+    	document.getElementById("show_timer2").innerHTML = "Stop";
+      document.getElementById("show_timer2").style.backgroundColor = "red";
+  	}
+    }
+    if(LTime2 < 0){
+      check = 2;
+    }
+}, 1000);
+
+	var y = setInterval(function() {
+    if(check == 2)
+    {
+    document.getElementById("show_timer3").style.backgroundColor = "green";
+  	LTime3 = LTime3 - i;
+    console.log(LTime3)
+  	var minutes = Math.floor((LTime3 % (1000 * 60 * 60)) / (1000 * 60));
+  	var seconds = Math.floor((LTime3 % (1000 * 60)) / 1000);
+    
+  	document.getElementById("show_timer3").innerHTML = minutes + "m " + seconds + "s ";
+  	if(LTime3 < 6000){
+      document.getElementById("show_timer3").style.backgroundColor = "yellow";
+    }
+    if (LTime3 < 0) {
+    	clearInterval(y);
+    	document.getElementById("show_timer3").innerHTML = "Stop";
+      document.getElementById("show_timer3").style.backgroundColor = "red";
+  	}
+  }
+  if(LTime3 < 0){
+    check = 4;
+  }
+}, 1000);
+
+	var z = setInterval(function() {
+    if(check ==4){
+  	LTime4 = LTime4 - i;
+    document.getElementById("show_timer4").style.backgroundColor = "green";
+    console.log(LTime4)
+  	var minutes = Math.floor((LTime4 % (1000 * 60 * 60)) / (1000 * 60));
+  	var seconds = Math.floor((LTime4 % (1000 * 60)) / 1000);
+    
+  	document.getElementById("show_timer4").innerHTML = minutes + "m " + seconds + "s ";
+    if(LTime4 < 6000){
+      document.getElementById("show_timer4").style.backgroundColor = "yellow";
+    }
+  	if (LTime4 < 0) {
+      check
+    	clearInterval(z);
+    	document.getElementById("show_timer4").innerHTML = "Stop";
+      document.getElementById("show_timer4").style.backgroundColor = "red";
+  	}
+    }
+    if(LTime4 < 0){
+      check = 5;
+    }
+}, 1000);
+  if(check == 5){
+    location.reload(true); 
+  }
 
 </script>
 {% endblock %}

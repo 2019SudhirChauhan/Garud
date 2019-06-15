@@ -1,12 +1,13 @@
 {% extends "Layout.html" %}
 {% block content %}
 <div class="blockC">
+	<div class="head">Future Traffic Prediction</div>
 	{% for post in posts %}
-	<div>Lane1 = {{ post.Lane1 }}</div>
-	<div>Lane2 = {{ post.Lane2 }}</div>
-	<div>Lane3 = {{ post.Lane3 }}</div>
-	<div>Lane4 = {{ post.Lane4 }}</div>
+	<div class="lane">Lane1 = {{ post.Lane1 }} Vehicles</div>
+	<div class="lane">Lane2 = {{ post.Lane2 }} Vehicles</div>
+	<div class="lane">Lane3 = {{ post.Lane3 }} Vehicles</div>
+	<div class="lane">Lane4 = {{ post.Lane4 }} Vehicles</div>
 	{% endfor %}
-	<a href="/Traffic_Prediction">Refresh</a>
+	<a href="/Traffic_Prediction" id="Refresh">Refresh</a>
 </div>
 {% endblock %}

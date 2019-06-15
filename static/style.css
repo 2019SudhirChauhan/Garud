@@ -4,7 +4,7 @@
                 background-color:#333;
             }
             .blockB{
-                background-color:#4CAF50;
+                background-color:#008CBA;
                 height: 78%;
                 width: 16%;
                 position: absolute;    
@@ -60,6 +60,7 @@
             .vertical-menu a.active {
                 background-color: #4CAF50; 
                 color: white;
+            }
             hr{
                 color:#333;
             }
